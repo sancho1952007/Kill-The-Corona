@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+        <title>Pop The Corona!</title>
+    </head>
+    <body onselectstart='return false' onmousedown="return false">
+        <center><h1 id='name'>Pop The Corona Virus!</h1></center>
+        <img id='image' src="https://i.ibb.co/JzPc3Dc/Virus-1.gif" onclick="killCorona()" draggable="false" alt='corona-image'>
+    </body>
+</html>
+
+<script>
+    function killCorona(){
+        document.getElementById('image').src='https://i.ibb.co/rcV10Hb/boom.png';
+        document.getElementById('name').style.display='none';
+        setTimeout(hideImage, 3000)
+    }
+    function hideImage(){
+    document.getElementById('name').style.display='block';
+    document.getElementById('name').innerHTML="Great, You Popped Corona!<br><center><a id='sub' href='https://www.youtube.com/channel/UCA_3t4pPc9GRIFiP86kRD2Q' target='_blank'>Subscribe Me On Youtube in Happiness</a></center>";
+        document.getElementById('image').style.display='none';
+        document.getElementById('name').style.position='absolute';
+        document.getElementById('name').style.top='50%';
+        document.getElementById('name').style.left='50%';
+        document.getElementById('name').style.transform='translate(-50%, -50%)';
+        document.getElementById('name').style.animation='move 1s linear';
+    }
+
+    document.addEventListener('contextmenu', function(e){
+        e.preventDefault();
+    });
+</script>
+
+<style>
+body{
+    cursor: default;
+}
+img{
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .50s linear;
+}
+
+h1{
+    font-family: 'Orbitron', sans-serif;
+}
+
+#sub{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+a:link{
+    color: blue;
+}
+
+a:visited{
+    color: blue;
+}
+
+#name{
+    transition: all .50s linear;
+}
+
+@keyframes move{
+    0%{
+        transform: rotate(50deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+}
+</style>
